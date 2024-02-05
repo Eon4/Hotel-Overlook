@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   grid-template-columns: 1fr 1fr;
-  background-color: grey;
+  background-color: var(--darkKnight);
 }
 
 .navbarGrid {
@@ -29,7 +29,7 @@ ul {
 
     a {
       font-size: 1.1rem;
-      color: black;
+      color: var(--snowWhite);
       text-decoration: none;
       transition: all 0.2s ease;
       padding: 8px;
@@ -44,6 +44,11 @@ ul {
 .footerNavbarStyle {
   background-color:white;
   font-size: 20px;
+  a{
+    color: var(--lightGrey);
+
+  }
+
 }
   
   
