@@ -1,0 +1,93 @@
+.navbarStyle {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--darkKnight);
+}
+
+.navbarGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 80%;
+  }
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+  li {
+    list-style: none;
+    text-align: center;
+
+    a {
+      font-size: 1.1rem;
+      color: var(--snowWhite);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      padding: 8px;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
+
+.footerNavbarStyle {
+  background-color:white;
+  font-size: 20px;
+  a{
+    color: var(--lightGrey);
+
+  }
+
+}
+  
+  
+  .dropDown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropDownButton {
+    color: white;
+    cursor: pointer;
+  }
+  
+  .dropDownContent {
+    display: none;
+    position: absolute;
+    min-width: 150px;
+    background-color: white;
+    left: -30px;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+  
+    li:nth-child(1) {
+      cursor: pointer;
+      padding-top: 12px;
+    }
+    li:nth-child(2) {
+      margin-bottom: 8px;
+    }
+    li {
+      padding: 4px;
+  
+      a {
+        cursor: pointer;
+      }
+    }
+  }
+  
+  .dropDown:hover .dropDownContent {
+    display: grid;
+  }
