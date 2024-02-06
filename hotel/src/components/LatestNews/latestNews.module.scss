@@ -1,0 +1,64 @@
+.newsCardStyle {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    cursor: pointer;
+    position: relative;
+  
+    img {
+      width: 600px;
+      height: 500px;
+      object-fit: cover;
+      transition: transform 0.3s ease-out;
+    }
+  
+    .newsDetails {
+      position: absolute;
+      top: 100%;
+      width: 600px;
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      background-color: rgb(255, 255, 255);
+      box-sizing: border-box;
+      color: #000000;
+      transform: translateY(-20px);
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+  
+    h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #271919;
+      text-decoration: none;
+      position: relative;
+    }
+  
+    p {
+      font-size: 14px;
+      color: #271919;
+      transition: transform 0.3s ease-in-out;
+      margin: 5px;
+    }
+  
+    a {
+      text-decoration: none;
+    }
+  
+    &:hover {
+      .newsDetails {
+        transform: translateY(-100%);
+        opacity: 1;
+        visibility: visible;
+      }
+  
+      h3 {
+        color: var(--redApple);
+      }
+  
+      img {
+        transform: translateY(-1px);
+      }
+    }
+  }
+  

@@ -42,52 +42,57 @@ ul {
 }
 
 .footerNavbarStyle {
-  background-color:white;
+  background-color: var(--backgroundColor);
   font-size: 20px;
-  a{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Adjust as needed */
+  justify-items: end; /* Align items to the end (right side) */
+
+  a {
     color: var(--lightGrey);
-
+    text-align: center; /* Center the text within each link */
+    padding: 10px; /* Add padding for better spacing */
+    text-decoration: none;
   }
-
 }
+
   
+  // .dropDown {
+  //   position: relative;
+  //   display: inline-block;
+  // }
   
-  .dropDown {
-    position: relative;
-    display: inline-block;
-  }
+  // .dropDownButton {
+  //   color: white;
+  //   cursor: pointer;
+  // }
   
-  .dropDownButton {
-    color: white;
-    cursor: pointer;
-  }
+  // .dropDownContent {
+  //   display: none;
+  //   position: absolute;
+  //   min-width: 150px;
+  //   background-color: white;
+  //   left: -30px;
+  //   z-index: 1;
+  //   align-items: center;
+  //   justify-content: center;
   
-  .dropDownContent {
-    display: none;
-    position: absolute;
-    min-width: 150px;
-    background-color: white;
-    left: -30px;
-    z-index: 1;
-    align-items: center;
-    justify-content: center;
+  //   li:nth-child(1) {
+  //     cursor: pointer;
+  //     padding-top: 12px;
+  //   }
+  //   li:nth-child(2) {
+  //     margin-bottom: 8px;
+  //   }
+  //   li {
+  //     padding: 4px;
   
-    li:nth-child(1) {
-      cursor: pointer;
-      padding-top: 12px;
-    }
-    li:nth-child(2) {
-      margin-bottom: 8px;
-    }
-    li {
-      padding: 4px;
+  //     a {
+  //       cursor: pointer;
+  //     }
+  //   }
+  // }
   
-      a {
-        cursor: pointer;
-      }
-    }
-  }
-  
-  .dropDown:hover .dropDownContent {
-    display: grid;
-  }
+  // .dropDown:hover .dropDownContent {
+  //   display: grid;
+  // }

@@ -7,6 +7,13 @@ export const Navbar = ({ footerStyle }) => {
   // Determine the appropriate class based on whether it's a footer navbar
   const navbarClass = footerStyle ? `${style.navbarStyle} ${style.footerNavbarStyle}` : style.navbarStyle;
 
+  const activeStyle = ({ isActive }) => {
+    return {
+        color: isActive ? '#FF0000' : '',
+        // textDecoration: isActive ? '' : 'underline'
+    }
+}
+
   return (
     // Render the navbar with the determined class
     <nav className={navbarClass}>
@@ -17,21 +24,21 @@ export const Navbar = ({ footerStyle }) => {
         </div>
         )}
 
-      <ul>
+      <ul> 
         <li>
-          <NavLink to="/forside">FORSIDE</NavLink>
+          <NavLink to="/forside" style={activeStyle}>Forside</NavLink>
         </li>
         <li>
-          <NavLink to="/hotelsDest">HOTELLER & DESTINATIONER</NavLink>
+          <NavLink to="/hotelsDest" style={activeStyle}>HOTELLER & DESTINATIONER</NavLink>
         </li>
         <li>
-          <NavLink to="/rooms">VÆRELSER</NavLink>
+          <NavLink to="/rooms" style={activeStyle}>VÆRELSER</NavLink>
         </li>
         <li>
-          <NavLink to="/reservation">RESERVATION</NavLink>
+          <NavLink to="/reservation" style={activeStyle}>RESERVATION</NavLink>
         </li>
         <li>
-          <NavLink to="/login">LOGIN</NavLink>
+          <NavLink to="/login" style={activeStyle}>LOGIN</NavLink>
         </li>
       </ul>
     </nav>

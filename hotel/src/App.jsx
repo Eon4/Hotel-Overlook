@@ -16,6 +16,8 @@ function App() {
             <Route index element={<Frontpage />} />
             <Route path="/forside" element={<Frontpage />} />
             <Route path="/hotelsDest" element={<HotelsandDest />} />
+
+            <Route path=":id" element={<HotelsandDest />} />
             <Route path="/rooms" element={<Rooms />} />
             <Route path="/reservation" element={<Reservation />} />
             <Route path="/login" element={<Loginpage />} />

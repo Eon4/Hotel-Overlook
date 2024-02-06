@@ -1,9 +1,19 @@
-.headerStyle {
-    height: 864px; // Set a height for the container
-    width: 100%;
-    background-size: cover; // This property ensures that the background image covers the entire container without stretching
-    background-repeat: no-repeat; // Prevent the background image from repeating
-    background-position: center; // Center the background image
-    // Add any other styles you need
+.headerContainer {
+  position: relative;
+  height: 864px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.headerImage {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: opacity 1s ease; // Adjust the duration and easing function as needed
+
+  &.fade {
+    opacity: 0;
   }
-  
+}
