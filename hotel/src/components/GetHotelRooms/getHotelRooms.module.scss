@@ -1,0 +1,21 @@
+
+/* getHotelRooms.module.scss */
+
+.room_image_title {
+  width: 100px;
+  height: 100px;
+}
+
+.roomCard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax( 1fr)); /* Adjust minmax values as needed */
+  gap: 20px; /* Adjust gap as needed */
+  list-style: none;
+  width: 300px;
+}
+
+.roomCard li {
+  border: 2px dashed red;
+  padding: 10px;
+  /* Additional styling for each room card */
+}
