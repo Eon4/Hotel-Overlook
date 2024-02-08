@@ -6,6 +6,14 @@ import { HotelsandDest } from './pages/HotelsandDest/HotelsandDest';
 import { Rooms } from './pages/Roompage/Rooms';
 import { Reservation } from './pages/Reservationpage/Reservation';
 import { Loginpage } from './pages/Loginpage/Loginpage';
+import { HotelCheckoutpage } from "./pages/HotelCheckOutpage/HotelCheckOutpage";
+import { ErrorPage } from './pages/Errorpage/ErrorPage';
+import { myPage } from './pages/myPage';
+import { Signup } from './pages/Loginpage/SignUppage';
+
+
+
+
 
 function App() {
   return (
@@ -21,6 +29,14 @@ function App() {
             <Route path="/rooms" element={<Rooms />} />
             <Route path="/reservation" element={<Reservation />} />
             <Route path="/login" element={<Loginpage />} />
+            <Route path="/signup" element={<Signup />} />
+
+            {/* <Route
+              path="/login/myPage"
+              element={<Reservation />}/> */}
+
+            <Route path='/*' element={<ErrorPage />} />
+
           </Route>
         </Routes>
       </Router>

@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import style from "../GetHotelRooms/getHotelRooms.module.scss";
 
+
 const GetHotelRooms = ({ countrySlug, citySlug, hotelSlug, roomSlug, onRoomSelect }) => {
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
     const fetchRooms = async () => {
         try {
-            const response = await fetch(`http://localhost:4000/destinations/${countrySlug}/${citySlug}/${hotelSlug}`);
-            const data = await response.json();
+          const response = await fetch(`http://localhost:4000/destinations/${countrySlug}/${citySlug}/${hotelSlug}`);
+          const data = await response.json();
       
           console.log("API response:", data);
       
@@ -39,14 +40,14 @@ const GetHotelRooms = ({ countrySlug, citySlug, hotelSlug, roomSlug, onRoomSelec
       <h2>Hotel Rooms in {hotelSlug}</h2>
       <ul className={style.roomCard}>
         {rooms.map((room) => (
-          <li key={room.room_id} onClick={() => onRoomSelect(room)}>
-            <h3>ID for hotelroom: {room.room_id} </h3>
+  <li key={room.room_id} onClick={() => onRoomSelect(room)}>
+  <h3>ID for hotelroom: {room.room_id} </h3>
             <h3>Room title {room.title} </h3>
             <h3>Room desc {room.description} </h3>
             <h3>How many people? {room.num_persons} </h3>
             <h3>Kvadratmeter {room.area} </h3>
             <h3>Price from: {room.day_price_normal} </h3>
-            <button>Click button here</button>
+            <button>Click to book</button>
           </li>
         ))}
       </ul>

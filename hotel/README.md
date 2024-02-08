@@ -10,8 +10,14 @@ Instructions on how to set up and run the project locally.
 
 ## Installation
 
-Detailed steps for installing dependencies and requirements.
-
+Start med at hente projektet ned
+Naviger til rod-mappen
+Åben en terminal og skriv følgende:
+npm install
+Skriv herefter:
+cd app
+Skriv herefter:
+npm run dev
 ## Usage
 
 Examples and scenarios on how to use the application or library.

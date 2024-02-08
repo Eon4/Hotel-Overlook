@@ -2,17 +2,25 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import style from "./navbar.module.scss";
 import Logo from "../../assets/img/logo.svg";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
 export const Navbar = ({ footerStyle }) => {
   // Determine the appropriate class based on whether it's a footer navbar
   const navbarClass = footerStyle ? `${style.navbarStyle} ${style.footerNavbarStyle}` : style.navbarStyle;
 
+
   const activeStyle = ({ isActive }) => {
     return {
         color: isActive ? '#FF0000' : '',
-        // textDecoration: isActive ? '' : 'underline'
     }
 }
+
+const { userData, setUserData } = useContext(UserContext);
+
+const logout = () => {
+  setUserData();
+};
 
   return (
     // Render the navbar with the determined class
@@ -26,7 +34,7 @@ export const Navbar = ({ footerStyle }) => {
 
       <ul> 
         <li>
-          <NavLink to="/forside" style={activeStyle}>Forside</NavLink>
+          <NavLink to="/forside" style={activeStyle}>FORSIDE</NavLink>
         </li>
         <li>
           <NavLink to="/hotelsDest" style={activeStyle}>HOTELLER & DESTINATIONER</NavLink>
@@ -35,11 +43,34 @@ export const Navbar = ({ footerStyle }) => {
           <NavLink to="/rooms" style={activeStyle}>VÆRELSER</NavLink>
         </li>
         <li>
-          <NavLink to="/reservation" style={activeStyle}>RESERVATION</NavLink>
+        <NavLink to="/reservation" style={activeStyle}>
+            RESERVATION
+          </NavLink>
         </li>
-        <li>
-          <NavLink to="/login" style={activeStyle}>LOGIN</NavLink>
-        </li>
+        {!userData ? (
+          <>
+            <li>
+              <NavLink to="/login">LOGIN</NavLink>
+            </li>
+            <li>
+              <NavLink to="/signup">OpretBruger</NavLink>
+            </li>
+          </>
+        ) : (
+          <div className={style.dropDown}>
+            <li className={style.dropDownButton}>
+              <NavLink to="/">my page</NavLink>
+            </li>
+            <div className={style.dropDownContent}>
+              <li>
+                <NavLink to="/signup">MIT PROGRAM</NavLink>
+              </li>
+              <li>
+                <NavLink onClick={() => logout()}>LOG UD</NavLink>
+              </li>
+            </div>
+          </div>
+        )}
       </ul>
     </nav>
   );

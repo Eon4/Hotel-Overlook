@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import style from "../HotelsandDest/HotelsandDest.module.scss";
 import GetHotel from "../../components/GetHotel/getHotel";
 import GetHotelRooms from "../../components/GetHotelRooms/getHotelRooms";
+// import ShowMetheRoom from "../../components/ShowChosenRoom/showChosenRoom";
+
 
 export const HotelsandDest = () => {
   const [destinations, setDestinations] = useState([]);
@@ -76,6 +78,7 @@ export const HotelsandDest = () => {
                     citySlug={selectedCity.slug}
                     hotelSlug={selectedHotel.slug}
                     onRoomSelect={handleRoomSelect}
+                    
                   />
                 </div>
               )}
