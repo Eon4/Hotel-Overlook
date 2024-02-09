@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
-// import style from "../Frontpage/Frontpage.module.scss";
 
-export const myPage = () => {
- 
-return ( 
-    <h2>my page here page here</h2>
+import React from "react";
+
+export const MyPage = () => {
+  return (
+    <>
+      <h2>This is my page. </h2>
+      <h2>My Reservations</h2>
+      <h2>More info</h2>
+    </>
   );
 };

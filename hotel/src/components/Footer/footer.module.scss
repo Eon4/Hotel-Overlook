@@ -1,9 +1,7 @@
 .footerStyle {
   width: 100%;
-  // margin-top: auto;
-  height: 100px; 
+  height: 100px;
   background-color: var(--snowWhite);
-  
 
   section {
     width: 80%;
@@ -28,5 +26,16 @@
   .icon {
     width: 30px;
     height: 30px;
+  }
+
+  @media screen and (max-width: 768px) {
+    section {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .socialIcons {
+      margin-top: 15px;
+    }
   }
 }

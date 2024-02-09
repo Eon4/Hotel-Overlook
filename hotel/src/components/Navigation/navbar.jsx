@@ -5,34 +5,38 @@ import Logo from "../../assets/img/logo.svg";
 import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 
+// Functional component for the navigation bar
 export const Navbar = ({ footerStyle }) => {
   // Determine the appropriate class based on whether it's a footer navbar
   const navbarClass = footerStyle ? `${style.navbarStyle} ${style.footerNavbarStyle}` : style.navbarStyle;
 
-
+  // Define a function to determine the active style for NavLink
   const activeStyle = ({ isActive }) => {
     return {
-        color: isActive ? '#FF0000' : '',
-    }
-}
+      color: isActive ? '#FF0000' : '',
+    };
+  }
 
-const { userData, setUserData } = useContext(UserContext);
+  // Destructure user data and setUserData function from UserContext
+  const { userData, setUserData } = useContext(UserContext);
 
-const logout = () => {
-  setUserData();
-};
+  // Function to handle user logout
+  const logout = () => {
+    setUserData();
+  };
 
+  // Render the navbar
   return (
-    // Render the navbar with the determined class
     <nav className={navbarClass}>
       {/* Conditionally render the logo only if it's not a footer navbar */}
       {!footerStyle && (
         <div className={style.navbarGrid}>
           <img src={Logo} alt="Hotel-Overlook-logo" />
         </div>
-        )}
+      )}
 
-      <ul> 
+      <ul>
+        {/* Navigation links */}
         <li>
           <NavLink to="/forside" style={activeStyle}>FORSIDE</NavLink>
         </li>
@@ -43,29 +47,24 @@ const logout = () => {
           <NavLink to="/rooms" style={activeStyle}>VÆRELSER</NavLink>
         </li>
         <li>
-        <NavLink to="/reservation" style={activeStyle}>
-            RESERVATION
-          </NavLink>
+          <NavLink to="/reservation" style={activeStyle}>RESERVATION</NavLink>
         </li>
+
+        {/* Conditional rendering based on user authentication */}
         {!userData ? (
           <>
             <li>
               <NavLink to="/login">LOGIN</NavLink>
             </li>
-            <li>
-              <NavLink to="/signup">OpretBruger</NavLink>
-            </li>
           </>
         ) : (
-          <div className={style.dropDown}>
+          <div className={style.dropDownContent}>
             <li className={style.dropDownButton}>
-              <NavLink to="/">my page</NavLink>
+              <NavLink to="/myPage">MIN SIDE</NavLink>
             </li>
             <div className={style.dropDownContent}>
               <li>
-                <NavLink to="/signup">MIT PROGRAM</NavLink>
-              </li>
-              <li>
+                {/* Logout NavLink */}
                 <NavLink onClick={() => logout()}>LOG UD</NavLink>
               </li>
             </div>

@@ -3,6 +3,10 @@
   height: 864px;
   width: 100%;
   overflow: hidden;
+
+  @media screen and (max-width: 768px) {
+    height: 400px; // Adjust the height for smaller screens
+  }
 }
 
 .headerImage {
@@ -11,9 +15,13 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  transition: opacity 1s ease; // Adjust the duration and easing function as needed
+  transition: opacity 1s ease;
 
   &.fade {
     opacity: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 100%; // Adjust the height for smaller screens
   }
 }

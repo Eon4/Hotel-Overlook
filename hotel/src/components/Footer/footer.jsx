@@ -4,8 +4,6 @@ import style from "../Footer/footer.module.scss";
 import iconFacebook from "./../../assets/SoMeIcons/icon_Facebook.svg";
 import iconTwitter from "./../../assets/SoMeIcons/icon_Twitter.svg";
 
-// Inside Footer component
-
 export const Footer = () => {
   return (
     <footer className={style.footerStyle}>
