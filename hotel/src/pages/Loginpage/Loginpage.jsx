@@ -12,11 +12,21 @@ export const Loginpage = () => {
   
     const url = "http://localhost:4000/login";
   
+    if (event.target.username.value === "") {
+      setMessage("Venligst indtast dit brugernavn");
+      return;
+    }
+
+    if (event.target.password.value === "") {
+      setMessage("Venligst indtast dit password");
+      return;
+    }
+
     let body = new URLSearchParams();
-  
+
     body.append("username", event.target.username.value);
     body.append("password", event.target.password.value);
-  
+
     let options = {
       method: "POST",
       body: body,
@@ -26,20 +36,23 @@ export const Loginpage = () => {
       let res = await fetch(url, options);
       let data = await res.json();
       console.log(data);
-      if (data?.status === "Ok") {
+    
+      if (data?.access_token) {
+        // Assuming the presence of access_token indicates success
         setUserData(data);
-        setMessage(`Du er nu logget ind som ${data.user.firstname}`);
+        setMessage(`Velkommen. Du er nu logget ind som ${data.user.firstname.lastname}`);
       } else {
         setMessage("Der opstod en fejl - prøv igen");
       }
     } catch (err) {
-      console.error(err); 
-      setMessage(`Der opstod en fejl: ${err.message}`);
+      console.error(err);
     }
-}    
+    }
+    
+
   return (
     <>
-      {/* <Title title={"Login"} /> */}
+      <Title title={"Login"} />
 
       <form
         className={style.loginFormStyle}

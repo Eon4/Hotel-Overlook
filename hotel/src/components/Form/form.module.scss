@@ -1,0 +1,66 @@
+.hookTitle {
+    color: var(--darkKnight);
+}
+
+.formStyle {
+    width: 600px; // Adjust the width as needed
+    margin: auto; // Center the form horizontally
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+
+    label {
+        input {
+            height: 40px; // Decrease the height for a smaller form
+            width: 100%;
+            padding: 8px; // Decrease the padding for a smaller form
+            box-sizing: border-box;
+            margin-bottom: 8px;
+            font-size: 14px; // Adjust font size for better readability on mobile
+            
+        }
+        
+     
+    }
+ 
+
+    textarea {
+        resize: none;
+        width: 100%;
+        padding: 8px; // Decrease the padding for a smaller form
+        box-sizing: border-box;
+        font-size: 14px; // Adjust font size for better readability on mobile
+    }
+
+
+
+    button{
+        height: 30px; // Decrease the height for smaller buttons
+        width: 30%; // Make buttons fill nearly half the width (allowing for 2% gap)
+        padding: 6px; // Decrease the padding for smaller buttons
+        box-sizing: border-box;
+        font-size: 14px; // Adjust 
+        text-align: center;
+        margin: 0;
+    }
+    
+
+ .radioButtons{
+    width: 30px;
+ }
+
+    // Add media query for mobile devices
+    @media (max-width: 768px) {
+        label {
+            input {
+                font-size: 12px; // Further adjust font size for smaller screens
+            }
+        }
+
+        textarea {
+            font-size: 12px; // Further adjust font size for smaller screens
+        }
+    }
+
+
+}

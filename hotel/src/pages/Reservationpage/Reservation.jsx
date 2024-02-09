@@ -23,12 +23,9 @@ export const Reservation = () => {
 
   return (
     <>
-      <h2>Reservation page here</h2>
-      {roomData ? (
-        <ReservationForm roomData={roomData} />
-      ) : (
-        <p>Loading room data...</p>
-      )}
+      {/* <h2>Reservation page here</h2> */}
+    
+      <ReservationForm/>
     </>
   );
 };

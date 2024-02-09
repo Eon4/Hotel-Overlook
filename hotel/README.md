@@ -18,6 +18,11 @@ Skriv herefter:
 cd app
 Skriv herefter:
 npm run dev
+
+Husk at installere:
+npm i sass
+npm i react-hook-form 
+
 ## Usage
 
 Examples and scenarios on how to use the application or library.
